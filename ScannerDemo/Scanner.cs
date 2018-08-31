@@ -23,16 +23,16 @@ namespace ScannerDemo
         }
  
         /// <summary>
-        /// Scan a image with PNG Format
+        /// Scanear no formato PNG
         /// </summary>
         /// <returns></returns>
         public ImageFile ScanPNG()
         {
-            // Connect to the device and instruct it to scan
-            // Connect to the device
+            // Conecte-se ao dispositivo e instrua-o a digitalizar
+            // Conecte-se ao dispositivo
             var device = this._deviceInfo.Connect();
 
-            // Select the scanner
+            // Selecione o Scanner
             CommonDialogClass dlg = new CommonDialogClass(); 
 
             var item = device.Items[1];
@@ -47,27 +47,27 @@ namespace ScannerDemo
                 {
                     var imageFile = (ImageFile)scanResult;
 
-                    // Return the imageFile
+                    // Retorna o imageFile
                     return imageFile;
                 }
             }
             catch (COMException e)
             {
-                // Display the exception in the console.
+                // Exibe a mensagem de erro no console
                 Console.WriteLine(e.ToString());
 
                 uint errorCode = (uint)e.ErrorCode;
 
-                // Catch 2 of the most common exceptions
+                // 2 das exceções mais comuns
                 if (errorCode ==  0x80210006)
                 {
-                    MessageBox.Show("The scanner is busy or isn't ready");
+                    MessageBox.Show("O scanner está ocupado ou indisponível");
                 }else if(errorCode == 0x80210064)
                 {
-                    MessageBox.Show("The scanning process has been cancelled.");
+                    MessageBox.Show("O processo de digitalização foi cancelado.");
                 }else
                 {
-                    MessageBox.Show("A non catched error occurred, check the console","Error",MessageBoxButtons.OK);
+                    MessageBox.Show("Um erro não detectado ocorreu, verifique no console","Erro",MessageBoxButtons.OK);
                 }
             }
 
@@ -75,16 +75,16 @@ namespace ScannerDemo
         }
 
         /// <summary>
-        /// Scan a image with JPEG Format
+        /// Scanear no formato JPEG
         /// </summary>
         /// <returns></returns>
         public ImageFile ScanJPEG()
         {
-            // Connect to the device and instruct it to scan
-            // Connect to the device
+            // Conecte-se ao dispositivo e instrua-o a digitalizar
+            // Conecte-se ao dispositivo
             var device = this._deviceInfo.Connect();
 
-            // Select the scanner
+            // Selecione o Scanner
             CommonDialogClass dlg = new CommonDialogClass();
 
             var item = device.Items[1];
@@ -99,29 +99,29 @@ namespace ScannerDemo
                 {
                     var imageFile = (ImageFile)scanResult;
 
-                    // Return the imageFile
+                    // Retorna o imageFile
                     return imageFile;
                 }
             }
             catch (COMException e)
             {
-                // Display the exception in the console.
+                // Exibe a mensagem de erro no console
                 Console.WriteLine(e.ToString());
 
                 uint errorCode = (uint)e.ErrorCode;
 
-                // Catch 2 of the most common exceptions
+                // 2 das exceções mais comuns
                 if (errorCode == 0x80210006)
                 {
-                    MessageBox.Show("The scanner is busy or isn't ready");
+                    MessageBox.Show("O scanner está ocupado ou indisponível");
                 }
                 else if (errorCode == 0x80210064)
                 {
-                    MessageBox.Show("The scanning process has been cancelled.");
+                    MessageBox.Show("O processo de digitalização foi cancelado.");
                 }
                 else
                 {
-                    MessageBox.Show("A non catched error occurred, check the console", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Um erro não detectado ocorreu, verifique no console", "Erro", MessageBoxButtons.OK);
                 }
             }
 
@@ -129,16 +129,16 @@ namespace ScannerDemo
         }
 
         /// <summary>
-        /// Scan a image with TIFF Format
+        /// Scanear no formato TIFF
         /// </summary>
         /// <returns></returns>
         public ImageFile ScanTIFF()
         {
-            // Connect to the device and instruct it to scan
-            // Connect to the device
+            // Conecte-se ao dispositivo e instrua-o a digitalizar
+            // Conecte-se ao dispositivo
             var device = this._deviceInfo.Connect();
 
-            // Select the scanner
+            // Selecione o Scanner
             CommonDialogClass dlg = new CommonDialogClass();
 
             var item = device.Items[1];
@@ -153,29 +153,29 @@ namespace ScannerDemo
                 {
                     var imageFile = (ImageFile)scanResult;
 
-                    // Return the imageFile
+                    // Retorna o imageFile
                     return imageFile;
                 }
             }
             catch (COMException e)
             {
-                // Display the exception in the console.
+                // Exibe a mensagem de erro no console
                 Console.WriteLine(e.ToString());
 
                 uint errorCode = (uint)e.ErrorCode;
 
-                // Catch 2 of the most common exceptions
+                // 2 das exceções mais comuns
                 if (errorCode == 0x80210006)
                 {
-                    MessageBox.Show("The scanner is busy or isn't ready");
+                    MessageBox.Show("O scanner está ocupado ou indisponível");
                 }
                 else if (errorCode == 0x80210064)
                 {
-                    MessageBox.Show("The scanning process has been cancelled.");
+                    MessageBox.Show("O processo de digitalização foi cancelado.");
                 }
                 else
                 {
-                    MessageBox.Show("A non catched error occurred, check the console", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Um erro não detectado ocorreu, verifique no console", "Erro", MessageBoxButtons.OK);
                 }
             }
 
@@ -229,7 +229,7 @@ namespace ScannerDemo
         }
 
         /// <summary>
-        /// Declare the ToString method
+        /// Declarar o método ToString
         /// </summary>
         /// <returns></returns>
         public override string ToString()
