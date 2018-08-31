@@ -129,7 +129,7 @@ namespace ScannerDemo
         }
 
         /// <summary>
-        /// Scanear no formato TIFF
+        /// Scannear no formato TIFF
         /// </summary>
         /// <returns></returns>
         public ImageFile ScanTIFF()
@@ -183,17 +183,17 @@ namespace ScannerDemo
         }
 
         /// <summary>
-        /// Adjusts the settings of the scanner with the providen parameters.
+        ///  Ajusta as configurações do scanner com os parâmetros fornecidos.
         /// </summary>
         /// <param name="scannnerItem">Expects a </param>
-        /// <param name="scanResolutionDPI">Provide the DPI resolution that should be used e.g 150</param>
+        /// <param name="scanResolutionDPI">Forneça a resolução de DPI que deve ser usada, por exemplo, 150</param>
         /// <param name="scanStartLeftPixel"></param>
         /// <param name="scanStartTopPixel"></param>
         /// <param name="scanWidthPixels"></param>
         /// <param name="scanHeightPixels"></param>
         /// <param name="brightnessPercents"></param>
-        /// <param name="contrastPercents">Modify the contrast percent</param>
-        /// <param name="colorMode">Set the color mode</param>
+        /// <param name="contrastPercents">Modifique o percentual de contraste</param>
+        /// <param name="colorMode">Definir o modo de cor</param>
         private static void AdjustScannerSettings(IItem scannnerItem, int scanResolutionDPI, int scanStartLeftPixel, int scanStartTopPixel, int scanWidthPixels, int scanHeightPixels, int brightnessPercents, int contrastPercents, int colorMode)
         {
             const string WIA_SCAN_COLOR_MODE = "6146";

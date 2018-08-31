@@ -24,7 +24,7 @@ namespace ScannerDemo
             ListScanners();
 
             // Define o diretorio padrão para salvar a digitalização
-            textBox1.Text = Path.GetTempPath();
+            textBox1.Text = Directory.GetCurrentDirectory();
             // Define JPEG como default
             comboBox1.SelectedIndex = 1;
             // Define RG como default
@@ -47,7 +47,7 @@ namespace ScannerDemo
                 if (deviceManager.DeviceInfos[i].Type != WiaDeviceType.ScannerDeviceType)
                 {
                     continue;
-                }
+                } 
                 // Adicione o scanner à listbox
                 // Importante: nós armazenamos um objeto do tipo scanner (o método ToString retorna o nome do scanner)
                 listBox1.Items.Add(
@@ -56,8 +56,13 @@ namespace ScannerDemo
             }
         }
 
+        // Digitaliza o documento, e altera o nome do arquivo para salvar de acordo com as seleções
         private void button1_Click(object sender, EventArgs e)
         {
+            string digDoc = mtxtCpf.Text.ToString();
+            digDoc += "_";
+            digDoc += cbDoc.Text;
+            textBox2.Text = digDoc;
             Task.Factory.StartNew(StartScanning).ContinueWith(result => TriggerScan());
         }
 
@@ -112,14 +117,21 @@ namespace ScannerDemo
             }));
             
             
-            // Save the image
-            var path = Path.Combine(textBox1.Text, textBox2.Text + imageExtension);
+            // salve a imagem
+            var path = Path.Combine(textBox1.Text, textBox2.Text, mtxtCpf.Text + imageExtension);
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
             if (File.Exists(path))
             {
-                File.Delete(path);
+                for (int i = 1; File.Exists(path); i++)
+                {
+                    image.SaveFile(path + i);
+                }
             }
-
             image.SaveFile(path);
 
             pictureBox1.Image = new Bitmap(path);

@@ -104,7 +104,7 @@
             this.comboBox1.Location = new System.Drawing.Point(9, 404);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(194, 21);
-            this.comboBox1.TabIndex = 6;
+            this.comboBox1.TabIndex = 0;
             // 
             // label2
             // 
@@ -117,10 +117,11 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(9, 351);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(194, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBox2.TabIndex = 0;
             this.textBox2.Text = "digitalização";
             // 
             // label1
@@ -145,7 +146,7 @@
             this.button2.Location = new System.Drawing.Point(9, 480);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 38);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 0;
             this.button2.Text = "Trocar pasta de armazenamento";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -194,7 +195,7 @@
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(509, 55);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Digitalizar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -236,7 +237,7 @@
             this.cbDoc.Location = new System.Drawing.Point(9, 301);
             this.cbDoc.Name = "cbDoc";
             this.cbDoc.Size = new System.Drawing.Size(194, 21);
-            this.cbDoc.TabIndex = 11;
+            this.cbDoc.TabIndex = 2;
             // 
             // label6
             // 
@@ -253,7 +254,7 @@
             this.mtxtCpf.Mask = "000,000,000-00";
             this.mtxtCpf.Name = "mtxtCpf";
             this.mtxtCpf.Size = new System.Drawing.Size(194, 20);
-            this.mtxtCpf.TabIndex = 13;
+            this.mtxtCpf.TabIndex = 1;
             this.mtxtCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // Form1
