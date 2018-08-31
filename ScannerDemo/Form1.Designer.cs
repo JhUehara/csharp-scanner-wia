@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,10 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbDoc = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.mtxtCpf = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -50,6 +54,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mtxtCpf);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.cbDoc);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -65,16 +73,25 @@
             this.groupBox1.Size = new System.Drawing.Size(209, 667);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Properties";
+            this.groupBox1.Text = "Propriedades";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Selecione um scanner";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 291);
+            this.label3.Location = new System.Drawing.Point(9, 388);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.Size = new System.Drawing.Size(99, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Image format";
+            this.label3.Text = "Formato da imagem";
             // 
             // comboBox1
             // 
@@ -84,7 +101,7 @@
             "PNG",
             "JPEG",
             "TIFF"});
-            this.comboBox1.Location = new System.Drawing.Point(9, 307);
+            this.comboBox1.Location = new System.Drawing.Point(9, 404);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(194, 21);
             this.comboBox1.TabIndex = 6;
@@ -92,44 +109,44 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 238);
+            this.label2.Location = new System.Drawing.Point(9, 335);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Filename";
+            this.label2.Text = "Nome do arquivo";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(9, 254);
+            this.textBox2.Location = new System.Drawing.Point(9, 351);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(194, 20);
             this.textBox2.TabIndex = 4;
-            this.textBox2.Text = "myscan";
+            this.textBox2.Text = "digitalização";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 341);
+            this.label1.Location = new System.Drawing.Point(9, 438);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Output scanned images";
+            this.label1.Text = "Pasta de armazenamento";
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(9, 357);
+            this.textBox1.Location = new System.Drawing.Point(9, 454);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(194, 20);
             this.textBox1.TabIndex = 2;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(9, 383);
+            this.button2.Location = new System.Drawing.Point(9, 480);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 38);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Change output folder";
+            this.button2.Text = "Trocar pasta de armazenamento";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -178,7 +195,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(509, 55);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Start scan";
+            this.button1.Text = "Digitalizar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -192,14 +209,52 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Select a scanner";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 285);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Documento";
+            // 
+            // cbDoc
+            // 
+            this.cbDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDoc.FormattingEnabled = true;
+            this.cbDoc.Items.AddRange(new object[] {
+            "RG",
+            "CPF",
+            "RG_CPF",
+            "Cert.Nasc.Frente",
+            "Cert.Nasc.Verso",
+            "Hist.Esc.Frente",
+            "Hist.Esc.Verso",
+            "Diploma_Frente",
+            "Diploma_Verso",
+            "Comp.Residencia"});
+            this.cbDoc.Location = new System.Drawing.Point(9, 301);
+            this.cbDoc.Name = "cbDoc";
+            this.cbDoc.Size = new System.Drawing.Size(194, 21);
+            this.cbDoc.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 232);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "CPF";
+            // 
+            // mtxtCpf
+            // 
+            this.mtxtCpf.Location = new System.Drawing.Point(9, 248);
+            this.mtxtCpf.Mask = "000,000,000-00";
+            this.mtxtCpf.Name = "mtxtCpf";
+            this.mtxtCpf.Size = new System.Drawing.Size(194, 20);
+            this.mtxtCpf.TabIndex = 13;
+            this.mtxtCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // Form1
             // 
@@ -208,7 +263,7 @@
             this.ClientSize = new System.Drawing.Size(736, 673);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "WIA Scanner Example";
+            this.Text = "WIA Digitalizador de arquivos";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -234,6 +289,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MaskedTextBox mtxtCpf;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbDoc;
+        private System.Windows.Forms.Label label6;
     }
 }
 

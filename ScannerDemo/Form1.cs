@@ -23,32 +23,33 @@ namespace ScannerDemo
         {
             ListScanners();
 
-            // Set start output folder TMP
+            // Define o diretorio padrão para salvar a digitalização
             textBox1.Text = Path.GetTempPath();
-            // Set JPEG as default
+            // Define JPEG como default
             comboBox1.SelectedIndex = 1;
+            // Define RG como default
+            cbDoc.SelectedIndex = 0;
 
         }
 
         private void ListScanners()
         {
-            // Clear the ListBox.
+            // Limpa a ListBox.
             listBox1.Items.Clear();
 
-            // Create a DeviceManager instance
+            // Cria um instancia do scanner
             var deviceManager = new DeviceManager();
 
-            // Loop through the list of devices and add the name to the listbox
+            // Loop para adicionar os scanners na listbox
             for (int i = 1; i <= deviceManager.DeviceInfos.Count; i++)
             {
-                // Add the device only if it's a scanner
+                // adiciona somente se for scanner
                 if (deviceManager.DeviceInfos[i].Type != WiaDeviceType.ScannerDeviceType)
                 {
                     continue;
                 }
-
-                // Add the Scanner device to the listbox (the entire DeviceInfos object)
-                // Important: we store an object of type scanner (which ToString method returns the name of the scanner)
+                // Adicione o scanner à listbox
+                // Importante: nós armazenamos um objeto do tipo scanner (o método ToString retorna o nome do scanner)
                 listBox1.Items.Add(
                     new Scanner(deviceManager.DeviceInfos[i])
                 );
@@ -62,7 +63,7 @@ namespace ScannerDemo
 
         private void TriggerScan()
         {
-            Console.WriteLine("Image succesfully scanned");
+            Console.WriteLine("Imagem digitalizada com sucesso!");
         }
 
         public void StartScanning()
@@ -76,14 +77,14 @@ namespace ScannerDemo
 
             if (device == null)
             {
-                MessageBox.Show("You need to select first an scanner device from the list",
-                                "Warning",
+                MessageBox.Show("Primeiro, você precisa selecionar um scanner na lista",
+                                "Atenção",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }else if(String.IsNullOrEmpty(textBox2.Text))
             {
-                MessageBox.Show("Provide a filename",
-                                "Warning",
+                MessageBox.Show("Nomeie o arquivo",
+                                "Atenção",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

@@ -9,7 +9,7 @@ namespace ScannerDemo
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Inicialização da aplicação
         /// </summary>
         [STAThread]
         static void Main()
